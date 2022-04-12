@@ -95,7 +95,7 @@ Use [node-sass](https://github.com/sass/node-sass#includepaths)
 ## CLI
 ### Usage
 ```bash
-ng2-inline [--outDir|-o] [--base|-b] [--relative|-r] [--flatten|-f] [--up|-u <count>] [--compress|-c] [--watch|-w] [--sourceOverwrite|-s] <path glob>
+ng2-inline [--outDir|-o] [--base|-b] [--relative|-r] [--flatten|-f] [--up|-u <count>] [--compress|-c] [--watch|-w] [--sourceOverwrite|-s] [--parseOnlyTemplate|-p]<path glob>
 ```
 - --flatten: remove parent directories from source locations (all output is written to --outDir)
 - --up <count>: remove `count` leading folders from the source locations when writing to --outDir
@@ -105,6 +105,7 @@ ng2-inline [--outDir|-o] [--base|-b] [--relative|-r] [--flatten|-f] [--up|-u <co
 - --sourceOverwrite: allows overwriting input .js files with the respective output file. This only works in case --outDir is not set.
 - --relative: keeps the relative path
 - --silent: output only errors
+- --parseOnlyTemplate: parses only templateUrl leaving stylesUrls untouched.
 
 ### Examples
 ```bash

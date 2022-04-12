@@ -21,10 +21,11 @@
 			c: 'compress',
 			w: 'watch',
 			r: 'relative',
-			s: 'sourceOverwrite'
+			s: 'sourceOverwrite',
+			p: 'parseOnlyTemplate'
 		},
 		string: ['outDir', 'base'],
-		boolean: ['flatten', 'compress', 'watch', 'relative', 'sourceOverwrite', 'silent'],
+		boolean: ['flatten', 'compress', 'watch', 'relative', 'sourceOverwrite', 'silent', 'parseOnlyTemplate'],
 		number: ['up']
 	});
 
@@ -57,7 +58,8 @@
 						inliner(content.toString(), {
 							base: args.base,
 							compress: args.compress,
-							relative: args.relative
+							relative: args.relative,
+							parseOnlyTemplate: args.parseOnlyTemplate
 						}, path.dirname(target)).then((r) => {
 							if (args.flatten) {
 								file = flattener(file);

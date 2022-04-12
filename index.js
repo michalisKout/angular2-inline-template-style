@@ -11,6 +11,10 @@ module.exports = function (content, options, targetDir) {
 	options = options || {};
 	options.base = options.base || './';
 
+	if(options.parseOnlyTemplate) {
+		return processTemplateUrl(content, options, targetDir);
+	}
+
 	return processStyleUrls(content, options, targetDir).then((r) => processTemplateUrl(r, options, targetDir));
 };
 
